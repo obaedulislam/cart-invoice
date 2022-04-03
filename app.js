@@ -35,8 +35,10 @@ addProductBtn.addEventListener("click", function(){
 </tr> */
 
   const infoTable = document.getElementById("info-table");
-  const tr = document.createElement('tr');
-  const th = document.createElement('th');
+  // const tr = document.createElement('tr');
+  // const th = document.createElement('th');
+  const tr = element('tr');
+  const th = element('th');
   const td1 = document.createElement('td');
   const td2 = document.createElement('td');
   const td3 = document.createElement('td');
@@ -57,6 +59,10 @@ addProductBtn.addEventListener("click", function(){
   totalCalculation();
 });
 
+function element(param){
+  return document.createElement(param);
+}
+
 function totalCalculation(){
   const subTotal = calculateSubTotal();
   const subTotalToDisplay = document.getElementById('sub-total');
@@ -65,6 +71,7 @@ function totalCalculation(){
   const tax = subTotal*20/100;
   document.getElementById("tax").innerText = tax.toFixed(2);
   document.getElementById("grand-total").innerText = tax + subTotal;
+  document.getElementById("grand-total-2").innerText = tax + subTotal;
 }
 
 
